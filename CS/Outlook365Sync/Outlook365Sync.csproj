@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Scheduler.Core.Desktop.Microsoft365Calendar" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Scheduling" Version="23.2.*-*" />
+  </ItemGroup>
+
+</Project>
