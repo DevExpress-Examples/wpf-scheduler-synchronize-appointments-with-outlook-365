@@ -38,14 +38,14 @@ namespace Outlook365Sync {
                 viewModel.InitStatus = await dXOutlook365Sync.InitAsync();
             switch (actions) {
                 case Actions.Scheduler2Outlook:
-                await dXOutlook365Sync.ExportSchedulerToOutlookAsync(viewModel.AllowRemoveMS365Events);
-                break;
+                    await dXOutlook365Sync.ExportSchedulerToOutlookAsync(viewModel.AllowRemoveMS365Events);
+                    break;
                 case Actions.Outlook2Scheduler:
-                await dXOutlook365Sync.ImportOutlookToSchedulerAsync(viewModel.AllowRemoveAppointments);
-                break;
+                    await dXOutlook365Sync.ImportOutlookToSchedulerAsync(viewModel.AllowRemoveAppointments);
+                    break;
                 case Actions.FullSynchronize:
-                await dXOutlook365Sync.MergeSchedulerAndOutlookAsync(viewModel.UseTracker);
-                break;
+                    await dXOutlook365Sync.MergeSchedulerAndOutlookAsync(viewModel.UseTracker);
+                    break;
             }
         }
     }
