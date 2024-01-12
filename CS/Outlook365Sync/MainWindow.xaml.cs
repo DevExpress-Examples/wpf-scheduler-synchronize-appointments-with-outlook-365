@@ -33,9 +33,14 @@ namespace Outlook365Sync {
         private async void OnExportToOutlook(object sender, RoutedEventArgs e) => await ProcessAction(Actions.Scheduler2Outlook);
         private async void OnFullSynchronize(object sender, RoutedEventArgs e) => await ProcessAction(Actions.FullSynchronize);
 
+        private async Task<InitStatus> InitComponent() {
+            string tenantId = "..."; // Enter your tenant (directory) ID.
+            string clientId = "..."; // Enter your client (application) ID.
+            return await dXOutlook365Sync.InitAsync(tenantId, clientId);
+        }
         async Task ProcessAction(Actions actions) {
             if (viewModel.InitStatus != InitStatus.Success)
-                viewModel.InitStatus = await dXOutlook365Sync.InitAsync();
+                viewModel.InitStatus = await InitComponent();
             switch (actions) {
                 case Actions.Scheduler2Outlook:
                     await dXOutlook365Sync.ExportSchedulerToOutlookAsync(viewModel.AllowRemoveMS365Events);
